@@ -1,0 +1,24 @@
+{
+      "name": "oracle-debezium-connector",
+      "config": {
+            "connector.class": "io.debezium.connector.oracle.OracleConnector",
+            "tasks.max" : "1",
+            "database.server.name" : "ebsdb",
+            "database.hostname" : "ebs.example.com",
+            "database.port" : "1521",
+            "database.user" : "xstrmadmin",
+            "database.password" : "xstrmadmin",
+            "database.dbname" : "ebsdb",
+            "database.schema" : "inv",
+            "database.out.server.name" : "dbzxout",
+            "database.history.kafka.bootstrap.servers" : "kafka:9092",
+            "errors.log.enable":"true",
+            "database.connection.adapter": "logminer",
+            "snapshot.mode": "schema_only",
+            "database.history.kafka.topic": "schema-changes.inv",
+            "database.tablename.case.insensitive": "true",
+            "schema.include.list": "INV",
+            "table.include.list": "EBSDB.INV.MTL_SERIAL_NUMBERS",
+            "heartbeat.interval.ms": 5000
+        }
+}
